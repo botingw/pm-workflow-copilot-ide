@@ -5,14 +5,15 @@
       "tasks_completed": [
         "Product Charter created",
         "User Flow Diagram for prototype created (pm_project_docs/weather_app/user_flow.md)",
-        "Wireframes for core screens created (pm_project_docs/weather_app/wireframe.md)"
+        "Wireframes for core screens created (pm_project_docs/weather_app/wireframe.md)",
+        "MVP Scope defined (pm_project_docs/weather_app/mvp_scope.md)",
+        "Technical Feasibility assessed (pm_project_docs/weather_app/technical_feasibility.md)",
+        "Business Viability assessed (pm_project_docs/weather_app/business_viability.md)",
+        "Product Requirements Document (PRD) created (pm_project_docs/weather_app/prd.md)"
       ],
       "next_steps": [
-        "Conduct user interviews for validation (output: Usability Findings Summary)",
-        "Finalize visual design system",
-        "Define technical requirements for MVP development",
-        "Consolidate into Product Requirements Document (PRD)",
-        "PRD Review & Engineering Kick-off"
+        "Suggest prototyping steps (e.g., 'Sketch your idea in Figma or create a simple wireframe.') and user testing (e.g., 'Test with 5 users and ask for feedback.') [will do in the future]",
+        "Generate Usability Findings (output: usability_findings.md) [will do in the future]"
       ]
     }
   }
