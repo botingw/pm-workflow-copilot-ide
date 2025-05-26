@@ -22,12 +22,41 @@ Product teams at fast‑moving startups rarely have time to open Confluence.  Ye
 4. All artefacts are Markdown stored alongside code, enabling *docs‑as‑code* review flows.
 5. Progress is logged to `pm-progress.json` for instant context recall.
 
-A typical chat might look like:
+---
+## 💬 What Using the Copilot Feels Like (Sample Dialogs)
 
+Below are a handful of concise interactions that illustrate typical usage. Real wording varies by IDE, but the flow stays the same.
+
+### 1. Kick‑off from a Rough Idea
+
+```text
+You: I want to build an app that helps freelancers track billable hours.
+Copilot: Excellent! Let’s begin with Strategic Alignment. Who's the primary user and what pain are we solving?
 ```
-You: Users keep forgetting weather alerts. Idea: hyper‑local rain pings.
-Copilot: Great! Let’s align strategically. Who benefits most, and what business goal does it serve?
+
+### 2. Checking Project Progress
+
+```text
+You: How far along is my "weather_app" project and what's next?
+Copilot: Progress → Product Charter ✓  •  User Flow ✓  •  MVP Scope ✓  
+Next → Prototype & usability testing → `usability_findings.md` → business viability check.
 ```
+
+### 3. Clarifying Workflow Stage
+
+```text
+You: Which phase are we in now?
+Copilot: You're in Feasibility & Viability. Technical feasibility completed; business viability still pending. Shall I draft `business_viability.md`?
+```
+
+### 4. Requesting a New Artefact
+
+```text
+You: Generate the MVP scope for the budgeting tool, please.
+Copilot: Drafting `pm_project_docs/budgeting_tool/mvp_scope.md` with user stories, success metrics, and out‑of‑scope items…
+```
+
+*(Conversation styles differ across IDEs; snippets are simplified for readability.)*
 
 ---
 
@@ -53,7 +82,8 @@ $ git clone https://github.com/your‑org/pm‑workflow‑copilot‑ide.git
 
 ```
 pm‑workflow‑copilot‑ide/
-├── pm_rules.txt                   # Core prompt rules loaded by IDE
+├── .clinerules/                   # Core prompt rules loaded by IDE
+    └── .pm_workflow_assistant
 ├── docs/
 │   └── product_management_workflow_startup.md  # Detailed framework (read‑only)
 ├── examples/                      # End‑to‑end transcripts & sample artefacts
@@ -78,6 +108,13 @@ pm‑workflow‑copilot‑ide/
 | Solution Definition     | `mvp_scope.md`                                        | "Prioritize MVP features" |
 | Feasibility & Viability | `technical_feasibility.md`<br>`business_viability.md` | "Assess tech risks"       |
 | Requirements            | `prd.md`                                              | "Generate PRD"            |
+
+
+---
+
+## ⚠️ Experimental Status
+
+> **Heads‑up:** *pm‑workflow‑copilot‑ide* began as a proving ground for bringing lightweight product‑management support into the broader **[Rulebook‑AI](https://github.com/botingw/rulebook-ai)** ecosystem — a cross‑IDE "rules + memory bank" toolkit for AI coding assistants. The long‑term plan is to merge this functionality upstream and deprecate this standalone repo once parity is reached. Follow the Rulebook‑AI repo for consolidated updates.
 
 ---
 
@@ -112,4 +149,8 @@ Distributed under the **MIT License**.  See `LICENSE` for details.
 
 * Inspired by Tom Preston‑Werner’s *"README first"* philosophy.
 * Workflow adapted from the open‑source \[Product Management Workflow for Startups].
-* Badges by [shields.io](https://shields.io).
+* Badges by [shields.io](https://shields.io).# pm-workflow-copilot-ide
+
+![GitHub last commit](https://img.shields.io/github/last-commit/your‑org/pm‑workflow‑copilot‑ide)
+![GitHub license](https://img.shields.io/github/license/your‑org/pm‑workflow‑copilot‑ide)
+![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
