@@ -1,0 +1,19 @@
+{
+  "projects": {
+    "Weather App for Hikers and Campers": {
+      "status": "In Progress",
+      "tasks_completed": [
+        "Product Charter created",
+        "User Flow Diagram for prototype created (pm_project_docs/weather_app/user_flow.md)",
+        "Wireframes for core screens created (pm_project_docs/weather_app/wireframe.md)"
+      ],
+      "next_steps": [
+        "Conduct user interviews for validation (output: Usability Findings Summary)",
+        "Finalize visual design system",
+        "Define technical requirements for MVP development",
+        "Consolidate into Product Requirements Document (PRD)",
+        "PRD Review & Engineering Kick-off"
+      ]
+    }
+  }
+}
