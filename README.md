@@ -72,42 +72,83 @@ Copilot: Drafting `pm_project_docs/budgeting_tool/mvp_scope.md` with user storie
 
 ---
 
-## ⚡ Quick Start
+## 📦 Installation
 
-```bash
-# 1 – clone the repo (or copy rules file into an existing project)
-$ git clone https://github.com/your‑org/pm‑workflow‑copilot‑ide.git
+This pack can be used with an AI-powered IDE in two ways: automatically with the `rulebook-ai` CLI, or by manually configuring your IDE.
 
-# 2 – point your IDE to the rules file
-#    Cursor: no further works to do
-#    Cline : no further works to do
-#    Roo Code, Github Copilot, Windsurf, etc: copy .clinerules/.pm_workflow_assistant to specified paths for project/workspace custom rules in these IDEs 
+### With Rulebook-AI (Recommended)
 
-# 3 – open a project folder and start chatting
-```
+[Rulebook-AI](https://github.com/botingw/rulebook-ai) is a cross-IDE toolkit that manages AI assistant rules and memory.
+
+1.  **Install the `rulebook-ai` CLI:**
+
+    First, clone the Rulebook-AI repository and install it in editable mode using `uv`:
+    ```bash
+    git clone https://github.com/botingw/rulebook-ai.git
+    cd rulebook-ai
+    uv run pip install -e .
+    cd ..
+    ```
+
+2.  **Add the Pack:**
+
+    This repository contains the `pm-workflow-copilot` pack. From the root of the `pm-workflow-copilot-ide` project directory, or root of any repo you want install this pack, run the following command to add the pack:
+
+    ```bash
+    rulebook-ai packs add pm-workflow-copilot
+    rulebook-ai project sync --pack pm-workflow-copilot
+    ```
+
+    The CLI will validate the pack and make it available to your IDE's AI assistant.
+
+3.  **Start Chatting:**
+
+    You're all set. Open a new chat and start with an idea, like `"Let's work on a weather app."`
 
 > **Tip:** keep your product‑management artefacts in git.  They get versioned automatically, and reviewers can PR suggestions like any code change.
 
 ---
+## 📦 Pack Layout
 
-## 🛠️ Repository Layout
+This pack has a specific structure that `rulebook-ai` recognizes. Here is an overview of the key directories and files within the `pm-workflow-copilot-pack` and what they do.
 
 ```
-pm‑workflow‑copilot‑ide/
-├── .clinerules/                   # Core prompt rules loaded by IDE
-    └── .pm_workflow_assistant
-├── docs/
-│   └── product_management_workflow_startup.md  # Detailed framework (read‑only)
-├── examples/                      # End‑to‑end transcripts & sample artefacts
-└── pm_project_docs/
-    └── weather‑app/               # ← generated per project
-        ├── opportunity_brief.md
-        ├── mvp_scope.md
-        ├── usability_findings.md
-        ├── technical_feasibility.md
-        ├── business_viability.md
-        └── pm-progress.json
+pm-workflow-copilot-pack/
+├── manifest.yaml
+├── README.md
+├── memory_starters/
+│   ├── docs/
+│   │   ├── product_management_workflow_startup.md
+│   │   └── pm-progress-template.json
+│   └── examples/
+│       └── ...
+└── rules/
+    └── 01-rules/
+        └── 01-pm_workflow_assistant.md
 ```
+
+### Key Components
+
+*   `manifest.yaml`: This file contains metadata about the pack, such as its name (`pm-workflow-copilot`), version, and a brief summary. The `rulebook-ai` CLI uses this for identification.
+
+*   `rules/`: This is the core of the pack. It contains the instructions that tell the AI assistant how to behave.
+    *   `01-pm_workflow_assistant.md`: The main rule file. It defines the entire product management workflow, from strategic alignment to final requirements. It tells the assistant how to guide the user, what questions to ask, and which documents to generate.
+
+*   `memory_starters/`: This directory contains documents that are loaded into the AI's short-term memory when the pack is activated. This gives the assistant the foundational knowledge it needs to operate.
+    *   `docs/product_management_workflow_startup.md`: The detailed, formal specification of the product management workflow. The assistant consults this as its primary reference.
+    *   `docs/pm-progress-template.json`: The JSON schema for the progress tracking file.
+    *   `examples/`: Sample product ideas that you can use to test the pack's workflow.
+
+### Generated Project Artifacts
+
+When you use this pack in your own project, the assistant will generate a new directory at the root of your project folder:
+
+*   `pm_project_docs/`: This folder is created automatically in your project's root directory the first time you start working on a new product idea with the assistant.
+    *   `[project_name]/`: Inside `pm_project_docs`, a sub-directory is created for each product idea you work on (e.g., `weather_app/`).
+    *   `*.md`: All the product management documents (Product Charter, PRD, etc.) are saved as Markdown files inside their respective project folder.
+    *   `pm-progress.json`: A file that tracks your progress through the workflow for a specific project.
+
+This structure keeps all your product documentation neatly organized alongside your code, right where you work.
 
 ---
 
