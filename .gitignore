@@ -1,0 +1,20 @@
+.DS_Store
+pm_project_docs/.DS_Store
+
+# AI coding IDE files (.windsurfrules can deprecate near future)
+.clinerules/
+.cursor/
+.roo/
+.windsurfrules
+.windsurf/rules/
+GEMINI.md
+# GitHub Copilot but allow workflows
+.github/copilot-instructions.md
+.idx/
+project_rules/
+.gemini/GEMINI.md
+.kilocode/
+.rulebook-ai/
+AGENTS.md
+CLAUDE.md
+WARP.md

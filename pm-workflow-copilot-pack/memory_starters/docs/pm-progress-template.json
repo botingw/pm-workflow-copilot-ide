@@ -1,0 +1,13 @@
+[
+  {
+    "phase": "Strategic Alignment",
+    "steps": [
+      {
+        "name": "Define Guiding Principles",
+        "output": "product_charter.md",
+        "guidelines": "Contains mission, vision, North Star metric, target user summary, operating principles"
+      }
+    ]
+  },
+  ...
+]
